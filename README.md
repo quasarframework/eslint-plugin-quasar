@@ -1,1 +1,1 @@
-# eslint-plugin-quasar
+# eslint-plugin-quasar [WIP]
