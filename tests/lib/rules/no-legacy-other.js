@@ -18,20 +18,20 @@ var rule = require("../../../lib/rules/no-legacy-other"),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run("no-legacy-other", rule, {
+// ruleTester.run("no-legacy-other", rule, {
 
-    valid: [
+//     valid: [
 
-        // give me some code that won't trigger a warning
-    ],
+//         // give me some code that won't trigger a warning
+//     ],
 
-    invalid: [
-        {
-            code: "LocalStorage.get.item",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
-    ]
-});
+//     invalid: [
+//         {
+//             code: "LocalStorage.get.item",
+//             errors: [{
+//                 message: "Fill me in.",
+//                 type: "Me too"
+//             }]
+//         }
+//     ]
+// });

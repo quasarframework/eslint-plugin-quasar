@@ -1,23 +1,30 @@
 {
   "name": "eslint-plugin-quasar",
-  "version": "0.0.0",
-  "description": "Quasar desc",
+  "version": "1.0.0-alpha.1",
+  "description": "Official ESLint plugin for Quasar",
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "quasar",
+    "quasarframework",
+    "rules"
   ],
-  "author": "Jeff",
+  "author": "Jeff <jeff@quasar.dev>",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "requireindex": "~1.1.0"
+    "requireindex": "~1.2.0"
   },
   "devDependencies": {
-    "eslint": "~3.9.1",
-    "mocha": "^3.1.2"
+    "eslint": "^6.1.0",
+    "mocha": "^6.2.0",
+    "vue-eslint-parser": "^6.0.4"
   },
   "engines": {
     "node": ">=0.10.0"
