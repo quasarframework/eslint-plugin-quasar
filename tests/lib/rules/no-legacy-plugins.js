@@ -18,20 +18,20 @@ var rule = require("../../../lib/rules/no-legacy-plugins"),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run("no-legacy-plugins", rule, {
+// ruleTester.run("no-legacy-plugins", rule, {
 
-    valid: [
+//     valid: [
 
-        // give me some code that won't trigger a warning
-    ],
+//         // give me some code that won't trigger a warning
+//     ],
 
-    invalid: [
-        {
-            code: "ActionSheet",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
-    ]
-});
+//     invalid: [
+//         {
+//             code: "ActionSheet",
+//             errors: [{
+//                 message: "Fill me in.",
+//                 type: "Me too"
+//             }]
+//         }
+//     ]
+// });
