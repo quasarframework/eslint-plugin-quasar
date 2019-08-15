@@ -21,7 +21,7 @@ $ npm install -D eslint-plugin-quasar
 The following changes need to be made to your `.eslintrc.js` configuration file.
 
 Modification to the `plugins` section:
-```json
+```js
 {
   "plugins": [
     "quasar"
@@ -30,7 +30,7 @@ Modification to the `plugins` section:
 ```
 
 Modification to  the `extends` section:
-```json
+```js
 {
   "extends": [
     "plugin:quasar/legacy"
@@ -39,7 +39,7 @@ Modification to  the `extends` section:
 ```
 
 Modification to  the `rules` section:
-```json
+```js
 {
   "rules": [
     'quasar/no-legacy-components': 'error',
