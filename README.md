@@ -9,9 +9,9 @@ When this plugin is ready, it will be moved to the `quasarframework` repository.
 Prerequisites: Node.js (>=8.10), npm (>=5.6.0), yarn (>=1.6.0)
 
 ```bash
-$ yarn add -D eslint-plugin-quasar
+$ yarn add --dev eslint-plugin-quasar
 # or
-$ npm install -D eslint-plugin-quasar
+$ npm install --dev eslint-plugin-quasar
 ```
 
 ## Usage
