@@ -42,12 +42,16 @@ Modification to  the `rules` section:
 ```js
 {
   "rules": [
-    'quasar/no-legacy-components': 'error',
-    'quasar/no-legacy-css': 'error',
-    'quasar/no-legacy-directives': 'error'
+    'quasar/no-legacy-components': 0,
+    'quasar/no-legacy-css': 0,
+    'quasar/no-legacy-directives': 0
   ]
 }
 ```
+
+The number zero (0) above tells eslint to turn off the rule. To turn it on use the following numbers:
+1. 1 - display output as a warning
+2. 2 - display output as an error
 
 Make sure you save the configuration file.
 
