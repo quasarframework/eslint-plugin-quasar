@@ -278,3 +278,8 @@ quasar/no-legacy-components
 
 ✖ 89 problems (89 errors, 0 warnings)
 ```
+
+## Fixing Issues
+Currently, **eslint-plugin-quasar** can fix some issues for you, but not all. To do this, you have to use the `--fix` command-line option with `eslint`.
+
+What will be fixed are any legacy css class usage to be converted to the new name as per the [Quasar Docs Upgrade Guide](https://quasar.dev/start/upgrade-guide#CSS). As well, it can also fix any legacy directive name changes as per the [Quasar Docs Upgrade Guide](https://quasar.dev/start/upgrade-guide#Directives).
