@@ -44,7 +44,8 @@ Modification to  the `rules` section:
   "rules": [
     'quasar/no-legacy-components': 0,
     'quasar/no-legacy-css': 0,
-    'quasar/no-legacy-directives': 0
+    'quasar/no-legacy-directives': 0,
+    'quasar/no-legacy-properties': 0
   ]
 }
 ```
