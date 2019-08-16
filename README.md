@@ -1,8 +1,6 @@
 # eslint-plugin-quasar [WIP]
 
-Currently in development...
-
-When this plugin is ready, it will be moved to the `quasarframework` repository.
+> **Currently, in this phase of development, eslint-plugin-quasar is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar ONLY.**
 
 ## Install
 
