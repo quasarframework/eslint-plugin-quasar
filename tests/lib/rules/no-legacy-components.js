@@ -22,7 +22,10 @@ let invalid = []
 legacyComponents.filter(c => {
   invalid.push({
     code: `<template><${c.tag}></${c.tag}></template>`,
-    errors: [c.replacedWith.length > 0 ? {
+    errors: [c.message ? {
+      message: c.message,
+      type: 'VElement'
+    } : c.replacedWith.length > 0 ? {
       message: `'${c.tag}' has been replaced with '${kebabCase(String(c.replacedWith)).replace(/-q/g, ' q')}'`,
       type: 'VElement'
     } : {
@@ -42,15 +45,6 @@ const ruleTester = new RuleTester({
     sourceType: 'module'
   }
 })
-
-// RuleTester.setDefaultConfig({
-//   parserOptions: {
-//     ecmaVersion: 6,
-//     ecmaFeatures: {
-//       jsx: true
-//     }
-//   }
-// })
 
 //------------------------------------------------------------------------------
 // Tests
