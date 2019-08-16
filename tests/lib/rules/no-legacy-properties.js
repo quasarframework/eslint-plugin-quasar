@@ -18,7 +18,7 @@ legacyProps.filter(c => {
     code: `<template><${c.tag + ' ' + c.legacy.props.join(' ')}></${c.tag}></template>`,
     errors: [ ...c.legacy.props.map(p => {
       return {
-        message: `'${p}' has been removed`,
+        message: `'${p}' property has been removed`,
         type: 'VIdentifier'
       }
     })]
