@@ -1,6 +1,6 @@
 /**
  * @fileoverview no legacy properties
- * @author Jeff
+ * @author Jeff <jeff@quasar.dev>
  */
 "use strict";
 
@@ -8,30 +8,45 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-legacy-properties"),
+const { components } = require('../../../lib/utils/quasar-components.js')
+// components that may have legacy props
+const legacyProps = components.filter(c => c.legacy !== void 0 && c.legacy.props !== void 0 && c.legacy.props.length > 0)
 
-    RuleTester = require("eslint").RuleTester;
+let invalid = []
+legacyProps.filter(c => {
+  invalid.push({
+    code: `<template><${c.tag + ' ' + c.legacy.props.join(' ')}></${c.tag}></template>`,
+    errors: [ ...c.legacy.props.map(p => {
+      return {
+        message: `'${p}' has been removed`,
+        type: 'VIdentifier'
+      }
+    })]
+  })
+})
+
+
+const rule = require("../../../lib/rules/no-legacy-properties")
+
+const RuleTester = require('eslint').RuleTester
+const ruleTester = new RuleTester({
+  parser: require.resolve('vue-eslint-parser'),
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module'
+  }
+})
 
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
 ruleTester.run("no-legacy-properties", rule, {
 
-    valid: [
+  valid: [
+    '<template><q-avatar color="red" text-color="white" icon="directions" /></template>'
+  ],
+  invalid: invalid
 
-        // give me some code that won't trigger a warning
-    ],
-
-    invalid: [
-        {
-            code: "<div></div>",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
-    ]
-});
+})
