@@ -14,18 +14,18 @@ const safeDirectives = directives.filter(d => d.replacedWith === void 0)
 
 let valid = []
 safeDirectives.filter(d => {
-  valid.push(`<template><div v-${d.name}></div></template>`)
+  valid.push(`<template><div v-${d.tag}></div></template>`)
 })
 
 let invalid = []
 legacyDirectives.filter(d => {
   invalid.push({
-    code: `<template><div v-${d.name}></div></template>`,
+    code: `<template><div v-${d.tag}></div></template>`,
     errors: [d.replacedWith.length > 0 ? {
-      message: `'${d.name}' directive has been replaced with '${d.replacedWith}'`,
+      message: `'${d.tag}' directive has been replaced with '${d.replacedWith}'`,
       type: 'VDirectiveKey'
     } : {
-      message: `'${d.name}' directive has been removed`,
+      message: `'${d.tag}' directive has been removed`,
       type: 'VDirectiveKey'
     }]
   })
