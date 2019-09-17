@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-quasar",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.11",
   "description": "Official ESLint plugin for Quasar",
   "author": "Jeff Galbraith <jeff@quasar.dev>",
   "main": "lib/index.js",
