@@ -16,7 +16,7 @@ let invalid = []
 legacyProps.filter(c => {
   invalid.push({
     code: `<template><${c.tag + ' ' + c.legacy.props.join(' ')}></${c.tag}></template>`,
-    errors: [ ...c.legacy.props.map(p => {
+    errors: [ ...c.legacy.props.forEach(p => {
       return {
         message: `'${p}' property has been removed`,
         type: 'VIdentifier'

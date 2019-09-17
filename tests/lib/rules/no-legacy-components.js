@@ -50,8 +50,7 @@ const ruleTester = new RuleTester({
 // Tests
 //------------------------------------------------------------------------------
 
-// var ruleTester = new RuleTester();
-ruleTester.run(  'no-legacy-components  ', rule, {
+ruleTester.run('no-legacy-components', rule, {
   valid: valid,
   invalid: invalid,
 })
