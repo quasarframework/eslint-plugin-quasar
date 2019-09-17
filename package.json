@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/hawkeye64/eslint-plugin-quasar",
   "dependencies": {
-    "requireindex": "~1.2.0"
+    "requireindex": "~1.2.0",
+    "semver-compare": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^6.3.0",
@@ -33,6 +34,7 @@
     "eslint-plugin",
     "quasar",
     "quasarframework",
+    "quasar framework",
     "rules"
   ],
   "engines": {

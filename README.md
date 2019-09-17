@@ -1,6 +1,12 @@
 # eslint-plugin-quasar [WIP]
 
-> **Currently, in this phase of development, eslint-plugin-quasar is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar ONLY.**
+> **~~Currently, in this phase of development, eslint-plugin-quasar is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar ONLY.~~**
+
+> **Starting with 1.0.0-alpha.10, eslint-plugin-quasar now supports v1+ with the `quasar/check-valid-props` rule.** More information below...
+
+Help us test this plugin. If you see any issues, please file an [issue](https://github.com/quasarframework/eslint-plugin-quasar/issues).
+
+Also, expect more to come. We have plans for even more Quasar support to help streamline your development efforts.
 
 ## Install
 
@@ -27,6 +33,8 @@ Modification to the `plugins` section:
 }
 ```
 
+### v.17
+
 Modification to  the `extends` section:
 ```js
 {
@@ -48,9 +56,33 @@ Modification to  the `rules` section:
 }
 ```
 
+### v1+
+
+Modification to  the `extends` section (for v1+):
+```js
+{
+  "extends": [
+    "plugin:quasar/standard"
+  ]
+}
+```
+
+Modification to  the `rules` section:
+```js
+{
+  "rules": [
+    'quasar/check-valid-props': 0
+  ]
+}
+```
+
+### Turning on the Rules
+
 The number zero (0) above tells eslint to turn off the rule. To turn it on use the following numbers:
 1. 1 - display output as a warning
 2. 2 - display output as an error
+
+Alternatively, you can use 'off', 'warn' or 'error' instead of the number values.
 
 Make sure you save the configuration file.
 
@@ -64,7 +96,7 @@ To test your `eslint` configuration against your legacy Quasar project, run this
 ```
 
 ### Results
-You may see results that look like this:
+You may see results that look like this (for v.17):
 
 ```bash
 /home/me/my-project/src/pages/About.vue
@@ -101,14 +133,14 @@ q-time'              quasar/no-legacy-components
 ```
 
 ## Fixing Issues
-Currently, **eslint-plugin-quasar** can fix some issues for you, but not all. To do this, you have to use the `--fix` command-line option with `eslint`.
+Currently, **eslint-plugin-quasar** can fix some issues for you (for v0.17), but not all. To do this, you have to use the `--fix` command-line option with `eslint`.
 
 What will be fixed are any legacy css class usage to be converted to the new name as per the [Quasar Docs Upgrade Guide](https://quasar.dev/start/upgrade-guide#CSS). As well, it can also fix any legacy directive name changes as per the [Quasar Docs Upgrade Guide](https://quasar.dev/start/upgrade-guide#Directives).
 
-Also, it should be noted that **eslint-plugin-quasar** currently has no support for legacy `QField` and as such, this hsould be a manual process.
+Also, it should be noted that **eslint-plugin-quasar** currently has no support for legacy `QField` and as such, this should be a manual process.
 
 # Tests
-If you are interested in the output of the testing, you can view the results below:
+If you are interested in the output of the testing, you can view the results below (for v.17):
 
 ```
 $ mocha tests --recursive
