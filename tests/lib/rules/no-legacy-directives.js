@@ -18,7 +18,7 @@ safeDirectives.filter(d => {
 })
 
 let invalid = []
-legacyDirectives.filter(d => {
+legacyDirectives.forEach(d => {
   invalid.push({
     code: `<template><div v-${d.tag}></div></template>`,
     errors: [d.replacedWith.length > 0 ? {
@@ -30,6 +30,8 @@ legacyDirectives.filter(d => {
     }]
   })
 })
+
+console.log(invalid)
 
 const rule = require("../../../lib/rules/no-legacy-directives")
 const RuleTester = require("eslint").RuleTester

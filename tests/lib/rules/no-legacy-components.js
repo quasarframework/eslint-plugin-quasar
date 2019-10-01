@@ -19,7 +19,7 @@ safeComponents.filter(c => {
 })
 
 let invalid = []
-legacyComponents.filter(c => {
+legacyComponents.forEach(c => {
   invalid.push({
     code: `<template><${c.tag}></${c.tag}></template>`,
     errors: [c.message ? {

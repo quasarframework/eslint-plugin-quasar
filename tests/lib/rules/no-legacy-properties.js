@@ -13,7 +13,7 @@ const { components } = require('../../../lib/utils/quasar-components.js')
 const legacyProps = components.filter(c => c.legacy !== void 0 && c.legacy.props !== void 0 && c.legacy.props.length > 0)
 
 let invalid = []
-legacyProps.filter(c => {
+legacyProps.forEach(c => {
   invalid.push({
     code: `<template><${c.tag + ' ' + c.legacy.props.join(' ')}></${c.tag}></template>`,
     errors: [ ...c.legacy.props.map(p => {
