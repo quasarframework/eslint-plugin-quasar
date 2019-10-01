@@ -21,8 +21,8 @@
     "semver-compare": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "mocha": "^6.2.0",
+    "eslint": "^6.5.1",
+    "mocha": "^6.2.1",
     "vue-eslint-parser": "^6.0.4"
   },
   "files": [
