@@ -10,12 +10,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "bugs": "https://github.com/hawkeye64/eslint-plugin-quasar/issues",
+  "bugs": "https://github.com/quasarframework/eslint-plugin-quasar/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hawkeye64/eslint-plugin-quasar.git"
+    "url": "git+https://github.com/quasarframework/eslint-plugin-quasar.git"
   },
-  "homepage": "https://github.com/hawkeye64/eslint-plugin-quasar",
+  "homepage": "https://github.com/quasarframework/eslint-plugin-quasar",
   "dependencies": {
     "requireindex": "~1.2.0",
     "semver-compare": "^1.0.0"
