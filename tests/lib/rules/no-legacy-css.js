@@ -22,7 +22,7 @@ invalid.push({
   ]
 })
 
-legacyCss.filter(c => {
+legacyCss.forEach(c => {
   invalid.push({
     code: `<template><div class="${c.name}"></div></template>`,
     errors: [c.replacedWith.length > 0 ? {
