@@ -15,7 +15,7 @@ Prerequisites: Node.js (>=8.10), npm (>=5.6.0), yarn (>=1.6.0)
 ```bash
 $ yarn add --dev eslint-plugin-quasar
 # or
-$ npm install --dev eslint-plugin-quasar
+$ npm install --save-dev eslint-plugin-quasar
 ```
 
 ## Usage
