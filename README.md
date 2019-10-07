@@ -71,7 +71,8 @@ Modification to  the `rules` section:
 ```js
 {
   "rules": [
-    'quasar/check-valid-props': 0
+    'quasar/check-valid-props': 0,
+    'quasar/no-invalid-qfield-usage': 0
   ]
 }
 ```
@@ -140,60 +141,222 @@ What will be fixed are any legacy css class usage to be converted to the new nam
 Also, it should be noted that **eslint-plugin-quasar** currently has no support for legacy `QField` and as such, this should be a manual process.
 
 # Tests
-If you are interested in the output of the testing, you can view the results below (for v.17):
+If you are interested in the output of the testing, you can view the results below (for v.17 and v1.+):
 
 ```
 $ mocha tests --recursive
+[ { code: '<template><div v-back-to-top></div></template>',
+    errors: [ [Object] ] },
+  { code: '<template><div v-close-overlay></div></template>',
+    errors: [ [Object] ] } ]
 
+
+  check-valid-props
+    valid
+      ✓ <template><q-btn flat color="primary" :label="Flat" @click="onClick" /></template> (160ms)
+      ✓ <template><q-btn class="glossy" round color="deep-orange" icon="local_activity" /></template>
+      ✓ <template><q-btn dense color="primary" :size="size" :label="`Size xl`" /></template>
+      ✓ <template><q-btn type="submit" :loading="submitting" label="Save" class="q-mt-md" color="teal"><template v-slot:loading><q-spinner-facebook /></template></q-btn></template>
+      ✓ <template><q-popup-proxy transition-show="scale"></q-popup-proxy></template>
+      ✓ <template>
+  <div class="q-pa-md" style="max-width: 350px">
+    <q-list ref="list">
+      <q-expansion-item popup default-opened icon="mail" label="Inbox" caption="5 unread emails">
+        <q-separator />
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-expansion-item popup icon="send" label="Outbox" caption="Empty">
+        <q-separator />
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-expansion-item popup icon="drafts" label="Draft" caption="Draft a new email">
+        <q-separator />
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+    </q-list>
+  </div>
+</template>
+      ✓ <template>
+  <div class="q-pa-md row items-start q-gutter-md">
+    <q-card class="my-card">
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card
+      class="my-card text-white" style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
+    >
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
+
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card dark bordered class="bg-grey-9 my-card">
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
+
+      <q-separator dark inset />
+
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card flat bordered class="my-card">
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+      </q-card-section>
+
+      <q-card-section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </q-card-section>
+
+      <q-separator inset />
+
+      <q-card-section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </q-card-section>
+    </q-card>
+  </div>
+</template>
+
+    invalid
+      ✓ <template><q-btn flat color="primary" label="Flat" boo-boo /></template>
+      ✓ <template><q-btn class="glossy" round color="deep-orange" icon="local_activity" bad-prop="nothing" /></template>
+      ✓ <template><q-btn dense color="primary" :size="size" :label="`Size xl`" :invalid-prop="invalid" /></template>
+      ✓ <template><q-btn type="submit" :loading="submitting" label="Save" class="q-mt-md" color="teal" :wrong="wrong"><template v-slot:loading><q-spinner-facebook /></template></q-btn></template>
+
+  no-invalid-qfield-usage
+    valid
+      ✓ <template><q-field label="Standard" stack-label><template v-slot:control><div class="self-center full-width no-outline" tabindex="0">Field content</div></template></q-field></template>
+    invalid
+      ✓ <template><q-field label="Standard" stack-label><q-select></q-select></q-field></template>
+      ✓ <template><q-field label="Standard" stack-label><q-input></q-input></q-field></template>
 
   no-legacy-components
     valid
-      ✓ <template><q-banner></q-banner></template> (278ms)
+      ✓ <template><q-ajax-bar></q-ajax-bar></template>
+      ✓ <template><q-avatar></q-avatar></template>
+      ✓ <template><q-badge></q-badge></template>
+      ✓ <template><q-banner></q-banner></template>
+      ✓ <template><q-bar></q-bar></template>
       ✓ <template><q-breadcrumbs></q-breadcrumbs></template>
       ✓ <template><q-breadcrumbs-el></q-breadcrumbs-el></template>
       ✓ <template><q-btn></q-btn></template>
       ✓ <template><q-btn-dropdown></q-btn-dropdown></template>
+      ✓ <template><q-btn-group></q-btn-group></template>
       ✓ <template><q-btn-toggle></q-btn-toggle></template>
       ✓ <template><q-card></q-card></template>
+      ✓ <template><q-card-actions></q-card-actions></template>
+      ✓ <template><q-card-section></q-card-section></template>
       ✓ <template><q-carousel></q-carousel></template>
+      ✓ <template><q-carousel-constrol></q-carousel-constrol></template>
+      ✓ <template><q-carousel-slide></q-carousel-slide></template>
+      ✓ <template><q-chat-message></q-chat-message></template>
       ✓ <template><q-checkbox></q-checkbox></template>
       ✓ <template><q-chip></q-chip></template>
+      ✓ <template><q-circular-progress></q-circular-progress></template>
+      ✓ <template><q-color></q-color></template>
+      ✓ <template><q-date></q-date></template>
       ✓ <template><q-dialog></q-dialog></template>
       ✓ <template><q-drawer></q-drawer></template>
+      ✓ <template><q-editor></q-editor></template>
+      ✓ <template><q-expansion-item></q-expansion-item></template>
       ✓ <template><q-fab></q-fab></template>
       ✓ <template><q-field></q-field></template>
+      ✓ <template><q-footer></q-footer></template>
+      ✓ <template><q-form></q-form></template>
+      ✓ <template><q-header></q-header></template>
       ✓ <template><q-icon></q-icon></template>
+      ✓ <template><q-img></q-img></template>
       ✓ <template><q-infinit-scroll></q-infinit-scroll></template>
       ✓ <template><q-inner-loading></q-inner-loading></template>
       ✓ <template><q-input></q-input></template>
       ✓ <template><q-item></q-item></template>
+      ✓ <template><q-item-label></q-item-label></template>
+      ✓ <template><q-item-section></q-item-section></template>
       ✓ <template><q-knob></q-knob></template>
       ✓ <template><q-layout></q-layout></template>
       ✓ <template><q-linear-progress></q-linear-progress></template>
       ✓ <template><q-list></q-list></template>
+      ✓ <template><q-markup-table></q-markup-table></template>
       ✓ <template><q-menu></q-menu></template>
+      ✓ <template><q-no-ssr></q-no-ssr></template>
       ✓ <template><q-option-group></q-option-group></template>
+      ✓ <template><q-page></q-page></template>
+      ✓ <template><q-page-container></q-page-container></template>
+      ✓ <template><q-page-scroller></q-page-scroller></template>
+      ✓ <template><q-page-sticky></q-page-sticky></template>
       ✓ <template><q-pagination></q-pagination></template>
       ✓ <template><q-parallax></q-parallax></template>
       ✓ <template><q-popup-edit></q-popup-edit></template>
+      ✓ <template><q-popup-proxy></q-popup-proxy></template>
       ✓ <template><q-pull-to-refresh></q-pull-to-refresh></template>
       ✓ <template><q-radio></q-radio></template>
       ✓ <template><q-range></q-range></template>
+      ✓ <template><q-rating></q-rating></template>
+      ✓ <template><q-resize-observer></q-resize-observer></template>
       ✓ <template><q-route-tab></q-route-tab></template>
+      ✓ <template><q-scroll-area></q-scroll-area></template>
+      ✓ <template><q-scroll-observer></q-scroll-observer></template>
       ✓ <template><q-select></q-select></template>
+      ✓ <template><q-separator></q-separator></template>
+      ✓ <template><q-slide-item></q-slide-item></template>
       ✓ <template><q-slider></q-slider></template>
+      ✓ <template><q-slide-transition></q-slide-transition></template>
+      ✓ <template><q-space></q-space></template>
+      ✓ <template><q-spitter></q-spitter></template>
       ✓ <template><q-step></q-step></template>
       ✓ <template><q-stepper></q-stepper></template>
+      ✓ <template><q-stepper-navigation></q-stepper-navigation></template>
       ✓ <template><q-tab></q-tab></template>
       ✓ <template><q-table></q-table></template>
+      ✓ <template><q-tab-panel></q-tab-panel></template>
+      ✓ <template><q-tab-panels></q-tab-panels></template>
       ✓ <template><q-tabs></q-tabs></template>
+      ✓ <template><q-tabs></q-tabs></template>
+      ✓ <template><q-td></q-td></template>
+      ✓ <template><q-th></q-th></template>
       ✓ <template><q-timeline></q-timeline></template>
       ✓ <template><q-timeline-entry></q-timeline-entry></template>
       ✓ <template><q-toggle></q-toggle></template>
       ✓ <template><q-toolbar></q-toolbar></template>
+      ✓ <template><q-toolbar-title></q-toolbar-title></template>
       ✓ <template><q-tooltip></q-tooltip></template>
+      ✓ <template><q-tr></q-tr></template>
       ✓ <template><q-tree></q-tree></template>
       ✓ <template><q-uploader></q-uploader></template>
+      ✓ <template><q-uploader-add-trigger></q-uploader-add-trigger></template>
+      ✓ <template><q-video></q-video></template>
+      ✓ <template><q-virtual-scroll></q-virtual-scroll></template>
     invalid
       ✓ <template><q-action-sheet></q-action-sheet></template>
       ✓ <template><q-alert></q-alert></template>
@@ -204,13 +367,14 @@ $ mocha tests --recursive
       ✓ <template><q-card-separator></q-card-separator></template>
       ✓ <template><q-chips-input></q-chips-input></template>
       ✓ <template><q-collapsible></q-collapsible></template>
-      ✓ <template><q-color></q-color></template>
+      ✓ <template><q-color-picker></q-color-picker></template>
       ✓ <template><q-context-menu></q-context-menu></template>
       ✓ <template><q-date-picker></q-date-picker></template>
       ✓ <template><q-datetime></q-datetime></template>
       ✓ <template><q-item-main></q-item-main></template>
       ✓ <template><q-item-separator></q-item-separator></template>
       ✓ <template><q-item-side></q-item-side></template>
+      ✓ <template><q-item-tile></q-item-tile></template>
       ✓ <template><q-jumbotron></q-jumbotron></template>
       ✓ <template><q-layout-drawer></q-layout-drawer></template>
       ✓ <template><q-layout-header></q-layout-header></template>
@@ -324,7 +488,7 @@ $ mocha tests --recursive
       ✓ <template><q-uploader additional-fields after align auto-expand before clear-value clearable error expand-style extensions float-label hide-underline hide-upload-button hide-upload-progress inverted inverted-light name no-content-type no-parent-field placeholder prefix stack-label suffix upload-factory url-factory warning></q-uploader></template>
 
 
-  161 passing (661ms)
+  224 passing (654ms)
 
-Done in 2.96s.
+Done in 1.54s.
 ```
