@@ -1,6 +1,6 @@
 /**
  * @fileoverview Checks correct usage of component properties
- * @author Jeff Galbraith <jeff@quasar.dev)
+ * @author Jeff Galbraith <jeff@quasar.dev>
  */
 "use strict";
 
@@ -51,7 +51,7 @@ ruleTester.run("check-valid-props", rule, {
 
   invalid: [
     {
-      code: "<template><q-btn flat color=\"primary\" label=\"Flat\" boo-boo /></template>",
+      code: '<template><q-btn flat color="primary" label="Flat" boo-boo /></template>',
       errors: [{
         message: '\'boo-boo\' is not a property of \'QBtn\'',
         type: 'VIdentifier'
