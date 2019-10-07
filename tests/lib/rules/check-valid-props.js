@@ -44,6 +44,7 @@ ruleTester.run("check-valid-props", rule, {
     '<template><q-btn class=\"glossy\" round color=\"deep-orange\" icon=\"local_activity\" /></template>',
     '<template><q-btn dense color=\"primary\" :size=\"size\" :label=\"`Size xl`\" /></template>',
     '<template><q-btn type=\"submit\" :loading=\"submitting\" label=\"Save\" class=\"q-mt-md\" color=\"teal\"><template v-slot:loading><q-spinner-facebook /></template></q-btn></template>',
+    '<template><q-popup-proxy transition-show="scale"></q-popup-proxy></template>',
     qexpansionItem1,
     qcard1
   ],
