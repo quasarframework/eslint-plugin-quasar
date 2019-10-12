@@ -26,7 +26,7 @@
       "default": true,
       "examples": [
         false,
-        "{ center: true, color: 'teal' }"
+        "{ center: true, color: 'teal', keyCodes: [] }"
       ],
       "category": "style"
     },
@@ -189,7 +189,8 @@
         "right",
         "center",
         "around",
-        "between"
+        "between",
+        "evenly"
       ],
       "category": "content"
     },
@@ -206,7 +207,7 @@
     "loading": {
       "type": "Boolean",
       "desc": "Put button into loading state (displays a QSpinner -- can be overriden by using a 'loading' slot)",
-      "category": "behavior|content"
+      "category": "behavior|state"
     },
     "disable": {
       "type": "Boolean",

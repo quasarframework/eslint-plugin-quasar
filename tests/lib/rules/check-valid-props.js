@@ -17,6 +17,7 @@ function readModuleFile(path) {
 
 const qcard1 = readModuleFile('../test-files/q-card-1.txt')
 const qexpansionItem1 = readModuleFile('../test-files/q-expansion-item-1.txt')
+const qpopupproxy_contextmenu = readModuleFile('../test-files/q-popupproxy-context-menu.txt')
 
 //------------------------------------------------------------------------------
 // Requirements
@@ -40,6 +41,7 @@ const ruleTester = new RuleTester({
 ruleTester.run("check-valid-props", rule, {
 
   valid: [
+    qpopupproxy_contextmenu,
     '<template><q-btn flat color=\"primary\" :label=\"Flat\" @click=\"onClick\" /></template>',
     '<template><q-btn class=\"glossy\" round color=\"deep-orange\" icon=\"local_activity\" /></template>',
     '<template><q-btn dense color=\"primary\" :size=\"size\" :label=\"`Size xl`\" /></template>',

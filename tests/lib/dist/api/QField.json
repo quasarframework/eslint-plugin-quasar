@@ -292,6 +292,48 @@
       }
     }
   },
+  "events": {
+    "clear": {
+      "desc": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "addedIn": "v1.1.5",
+      "params": {
+        "value": {
+          "type": [
+            "Any"
+          ],
+          "desc": "The previous value before clearing it"
+        }
+      }
+    },
+    "input": {
+      "desc": "Emitted when the model changes, only when used with 'clearable' or the 'control' scoped slot.",
+      "params": {
+        "value": {
+          "type": "Any",
+          "desc": "New model value",
+          "required": true
+        }
+      }
+    },
+    "focus": {
+      "desc": "Emitted when component gets focused",
+      "params": {
+        "evt": {
+          "type": "Object",
+          "desc": "JS event object"
+        }
+      }
+    },
+    "blur": {
+      "desc": "Emitted when component loses focus",
+      "params": {
+        "evt": {
+          "type": "Object",
+          "desc": "JS event object"
+        }
+      }
+    }
+  },
   "methods": {
     "resetValidation": {
       "desc": "Reset validation status"

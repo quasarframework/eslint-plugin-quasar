@@ -10,6 +10,12 @@
       ],
       "category": "behavior"
     },
+    "no-route-fullscreen-exit": {
+      "type": "Boolean",
+      "desc": "Changing route app won't exit fullscreen",
+      "category": "behavior",
+      "addedIn": "v1.1.7"
+    },
     "value": {
       "type": "Any",
       "desc": "Model of the component defining current panel's name; If used as Number, it does not defines panel index though but slide name's which may be an Integer; Either use this property (along with a listener for 'input' event) OR use v-model directive",

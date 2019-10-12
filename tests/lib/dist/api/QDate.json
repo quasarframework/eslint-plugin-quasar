@@ -102,6 +102,24 @@
       "desc": "Notify the component that the background is a dark color",
       "category": "style"
     },
+    "square": {
+      "type": "Boolean",
+      "desc": "Removes border-radius so borders are squared",
+      "category": "style",
+      "addedIn": "v1.1.5"
+    },
+    "flat": {
+      "type": "Boolean",
+      "desc": "Applies a 'flat' design (no default shadow)",
+      "category": "style",
+      "addedIn": "v1.1.5"
+    },
+    "bordered": {
+      "type": "Boolean",
+      "desc": "Applies a default border to the component",
+      "category": "style",
+      "addedIn": "v1.1.5"
+    },
     "readonly": {
       "type": "Boolean",
       "desc": "Put component in readonly mode",
@@ -256,6 +274,47 @@
               "addedIn": "v1.1.1"
             }
           }
+        }
+      }
+    }
+  },
+  "methods": {
+    "setToday": {
+      "desc": "Change model to today",
+      "addedIn": "v1.1.7"
+    },
+    "setView": {
+      "desc": "Change current view",
+      "addedIn": "v1.1.7",
+      "params": {
+        "view": {
+          "type": "String",
+          "desc": "QDate view name",
+          "required": true,
+          "values": [
+            "Calendar",
+            "Months",
+            "Years"
+          ]
+        }
+      }
+    },
+    "offsetCalendar": {
+      "desc": "Increment or decrement calendar view's month or year",
+      "addedIn": "v1.1.7",
+      "params": {
+        "type": {
+          "type": "String",
+          "required": true,
+          "desc": "What to increment/decrement",
+          "values": [
+            "month",
+            "year"
+          ]
+        },
+        "descending": {
+          "type": "Boolean",
+          "desc": "Decrement?"
         }
       }
     }
