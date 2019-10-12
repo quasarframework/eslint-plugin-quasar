@@ -15,7 +15,7 @@
       "default": true,
       "examples": [
         false,
-        "{ center: true, color: 'teal' }"
+        "{ center: true, color: 'teal', keyCodes: [] }"
       ],
       "category": "style"
     },

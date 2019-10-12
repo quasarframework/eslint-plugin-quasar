@@ -63,7 +63,8 @@
         "center",
         "right",
         "between",
-        "around"
+        "around",
+        "evenly"
       ],
       "examples": [
         "left",

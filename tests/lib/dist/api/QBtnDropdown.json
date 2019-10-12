@@ -29,7 +29,7 @@
       "default": true,
       "examples": [
         false,
-        "{ center: true, color: 'teal' }"
+        "{ center: true, color: 'teal', keyCodes: [] }"
       ],
       "category": "style"
     },
@@ -192,7 +192,8 @@
         "right",
         "center",
         "around",
-        "between"
+        "between",
+        "evenly"
       ],
       "category": "content"
     },
