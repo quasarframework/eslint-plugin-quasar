@@ -102,6 +102,24 @@
       "desc": "Notify the component that the background is a dark color",
       "category": "style"
     },
+    "square": {
+      "type": "Boolean",
+      "desc": "Removes border-radius so borders are squared",
+      "category": "style",
+      "addedIn": "v1.1.5"
+    },
+    "flat": {
+      "type": "Boolean",
+      "desc": "Applies a 'flat' design (no default shadow)",
+      "category": "style",
+      "addedIn": "v1.1.5"
+    },
+    "bordered": {
+      "type": "Boolean",
+      "desc": "Applies a default border to the component",
+      "category": "style",
+      "addedIn": "v1.1.5"
+    },
     "readonly": {
       "type": "Boolean",
       "desc": "Put component in readonly mode",
@@ -234,6 +252,12 @@
           }
         }
       }
+    }
+  },
+  "methods": {
+    "setNow": {
+      "desc": "Change model to current moment",
+      "addedIn": "v1.1.7"
     }
   }
 }

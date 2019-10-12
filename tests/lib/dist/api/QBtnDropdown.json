@@ -209,7 +209,7 @@
     "loading": {
       "type": "Boolean",
       "desc": "Put button into loading state (displays a QSpinner -- can be overriden by using a 'loading' slot)",
-      "category": "behavior|content"
+      "category": "behavior|state"
     },
     "disable": {
       "type": "Boolean",
@@ -220,6 +220,18 @@
       "type": "Boolean",
       "desc": "Split dropdown icon into its own button",
       "category": "content|behavior"
+    },
+    "dropdown-icon": {
+      "type": "String",
+      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "examples": [
+        "map",
+        "ion-add",
+        "img:https://cdn.quasar.dev/logo/svg/quasar-logo.svg",
+        "img:statics/path/to/some_image.png"
+      ],
+      "category": "content",
+      "addedIn": "v1.1.6"
     },
     "disable-main-btn": {
       "type": "Boolean",
