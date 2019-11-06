@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-quasar",
-  "version": "1.0.0-alpha.16",
+  "version": "1.0.0-alpha.17",
   "description": "Official ESLint plugin for Quasar",
   "author": "Jeff Galbraith <jeff@quasar.dev>",
   "main": "lib/index.js",
@@ -21,8 +21,8 @@
     "semver-compare": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "mocha": "^6.2.1",
+    "eslint": "^6.6.0",
+    "mocha": "^6.2.2",
     "vue-eslint-parser": "^6.0.4"
   },
   "files": [
