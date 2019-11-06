@@ -19,9 +19,6 @@
         "evenly",
         "stretch"
       ],
-      "examples": [
-        "between"
-      ],
       "category": "content"
     },
     "vertical": {

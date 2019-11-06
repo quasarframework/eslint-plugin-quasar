@@ -20,6 +20,12 @@
       "type": "Boolean",
       "desc": "Applies a small standard border-radius for a squared shape of the component",
       "category": "style"
+    },
+    "dark": {
+      "type": "Boolean",
+      "desc": "Notify the component that the background is a dark color",
+      "category": "style",
+      "addedIn": "v1.3.0"
     }
   },
   "slots": {

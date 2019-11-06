@@ -284,7 +284,7 @@
         "Function",
         "String"
       ],
-      "desc": "Property of option which holds the 'value'",
+      "desc": "Property of option which holds the 'value'; If using a function then for best performance, reference it from your scope and do not define it inline",
       "default": "value",
       "examples": [
         "option-value=\"modelNumber\"",
@@ -297,7 +297,7 @@
         "Function",
         "String"
       ],
-      "desc": "Property of option which holds the 'label'",
+      "desc": "Property of option which holds the 'label'; If using a function then for best performance, reference it from your scope and do not define it inline",
       "default": "label",
       "examples": [
         "option-label=\"itemName\"",
@@ -310,7 +310,7 @@
         "Function",
         "String"
       ],
-      "desc": "Property of option which tells it's disabled; The value of the property must be a Boolean",
+      "desc": "Property of option which tells it's disabled; The value of the property must be a Boolean; If using a function then for best performance, reference it from your scope and do not define it inline",
       "default": "disable",
       "examples": [
         "option-disable=\"cannotSelect\"",
@@ -898,6 +898,17 @@
           "type": "Any",
           "desc": "Optional value to validate against"
         }
+      },
+      "returns": {
+        "type": [
+          "Boolean",
+          "Promise<boolean>"
+        ],
+        "desc": "True/false if no async rules, otherwise a Promise with the outcome (true -> validation was a success, false -> invalid models detected)",
+        "examples": [
+          "true",
+          "validate().then(outcome => { ... })"
+        ]
       }
     },
     "focus": {

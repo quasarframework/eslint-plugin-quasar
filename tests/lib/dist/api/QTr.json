@@ -1,5 +1,10 @@
 {
   "type": "component",
+  "behavior": {
+    "$listeners": {
+      "desc": "All native events are being propagated (you don't need the '.native' modifier)"
+    }
+  },
   "props": {
     "props": {
       "type": "Object",

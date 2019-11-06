@@ -47,6 +47,12 @@
       ],
       "category": "style"
     },
+    "dark": {
+      "type": "Boolean",
+      "desc": "Notify the component that the background is a dark color",
+      "category": "style",
+      "addedIn": "v1.3.0"
+    },
     "mini-to-overlay": {
       "type": "Boolean",
       "desc": "Mini mode will expand as an overlay",

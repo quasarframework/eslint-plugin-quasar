@@ -45,6 +45,12 @@
       "desc": "Dense mode; toolbar buttons are shown on one-line only",
       "category": "style"
     },
+    "dark": {
+      "type": "Boolean",
+      "desc": "Notify the component that the background is a dark color",
+      "category": "style",
+      "addedIn": "v1.3.0"
+    },
     "disable": {
       "type": "Boolean",
       "desc": "Put component in disabled mode",
