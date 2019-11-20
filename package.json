@@ -7,6 +7,10 @@
   "scripts": {
     "test": "mocha tests --recursive"
   },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/hawkeye64"
+  },
   "publishConfig": {
     "access": "public"
   },
