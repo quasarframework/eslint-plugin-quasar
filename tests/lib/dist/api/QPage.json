@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/layout/page"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"

@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/slide-item"
+  },
   "props": {
     "left-color": {
       "type": "String",
@@ -38,6 +41,12 @@
       ],
       "category": "style",
       "addedIn": "v1.1.3"
+    },
+    "dark": {
+      "type": "Boolean",
+      "desc": "Notify the component that the background is a dark color",
+      "category": "style",
+      "addedIn": "v1.4.1"
     }
   },
   "slots": {

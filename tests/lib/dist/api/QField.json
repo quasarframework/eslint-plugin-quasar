@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/field"
+  },
   "props": {
     "error": {
       "type": "Boolean",
@@ -173,10 +176,10 @@
       "desc": "Dense mode; occupies less space",
       "category": "style"
     },
-    "items-aligned": {
+    "item-aligned": {
       "type": "Boolean",
-      "desc": "Align content to match QItem",
-      "category": "content"
+      "desc": "Match inner content alignment to that of QItem",
+      "category": "style"
     },
     "disable": {
       "type": "Boolean",
@@ -193,6 +196,15 @@
       "desc": "Focus field on initial component render",
       "category": "behavior"
     },
+    "for": {
+      "type": "String",
+      "desc": "DOM element id to be used as 'for' attribute of the label and as 'id' for the focus target",
+      "examples": [
+        "for=\"myFieldsId\""
+      ],
+      "category": "behavior",
+      "addedIn": "v1.4.2"
+    },
     "maxlength": {
       "type": [
         "String",
@@ -203,11 +215,6 @@
         "12"
       ],
       "category": "model"
-    },
-    "item-aligned": {
-      "type": "Boolean",
-      "desc": "Match inner content alignments to QItem",
-      "category": "style"
     }
   },
   "slots": {
@@ -280,7 +287,7 @@
           "params": {
             "value": {
               "type": "Any",
-              "desc": "Value to be emited",
+              "desc": "Value to be emitted",
               "examples": [
                 0,
                 "Changed text"

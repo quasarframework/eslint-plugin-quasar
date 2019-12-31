@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/select"
+  },
   "props": {
     "virtual-scroll-horizontal": {
       "type": "Boolean",
@@ -214,10 +217,10 @@
       "desc": "Dense mode; occupies less space",
       "category": "style"
     },
-    "items-aligned": {
+    "item-aligned": {
       "type": "Boolean",
-      "desc": "Align content to match QItem",
-      "category": "content"
+      "desc": "Match inner content alignment to that of QItem",
+      "category": "style"
     },
     "disable": {
       "type": "Boolean",
@@ -233,6 +236,15 @@
       "type": "Boolean",
       "desc": "Focus field on initial component render",
       "category": "behavior"
+    },
+    "for": {
+      "type": "String",
+      "desc": "DOM element id to be used as 'for' attribute of the label and as 'id' for the focus target",
+      "examples": [
+        "for=\"myFieldsId\""
+      ],
+      "category": "behavior",
+      "addedIn": "v1.4.2"
     },
     "value": {
       "type": [
@@ -330,7 +342,7 @@
     },
     "dropdown-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -362,7 +374,7 @@
     },
     "options-selected-class": {
       "type": "String",
-      "desc": "CSS class name for options that are active/selected",
+      "desc": "CSS class name for options that are active/selected; Set it to an empty string to stop applying the default (which is text-* where * is the 'color' prop value)",
       "examples": [
         "text-orange"
       ],
@@ -474,6 +486,18 @@
       ],
       "category": "style",
       "addedIn": "v1.1.7"
+    },
+    "tabindex": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Tabindex HTML attribute value",
+      "examples": [
+        "0",
+        "100"
+      ],
+      "category": "general"
     },
     "transition-show": {
       "type": "String",

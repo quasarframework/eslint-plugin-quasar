@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/layout/drawer"
+  },
   "props": {
     "value": {
       "type": "Boolean",
@@ -21,7 +24,7 @@
     },
     "overlay": {
       "type": "Boolean",
-      "desc": "Puts drawer into overlay mode (does not occupies space on screen, narrowing the page)",
+      "desc": "Puts drawer into overlay mode (does not occupy space on screen, narrowing the page)",
       "category": "behavior"
     },
     "width": {
@@ -147,7 +150,7 @@
   },
   "slots": {
     "default": {
-      "desc": "Default slot in the devland unslotted content of the component (overriden by 'mini' slot if used and drawer is in mini mode)"
+      "desc": "Default slot in the devland unslotted content of the component (overridden by 'mini' slot if used and drawer is in mini mode)"
     },
     "mini": {
       "desc": "Content to show when in mini mode (overrides 'default' slot)"

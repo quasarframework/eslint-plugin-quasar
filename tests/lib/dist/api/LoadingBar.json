@@ -1,5 +1,8 @@
 {
   "type": "plugin",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/quasar-plugins/loading-bar"
+  },
   "injection": "$q.loadingBar",
   "quasarConfOptions": {
     "propName": "loadingBar",

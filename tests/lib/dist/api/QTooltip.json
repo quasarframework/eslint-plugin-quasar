@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/tooltip"
+  },
   "props": {
     "content-class": {
       "type": [
@@ -34,7 +37,7 @@
     },
     "max-height": {
       "type": "String",
-      "desc": "The maximimum height of the Tooltip; Size in CSS units, including unit name",
+      "desc": "The maximum height of the Tooltip; Size in CSS units, including unit name",
       "examples": [
         "16px",
         "2rem"
@@ -43,7 +46,7 @@
     },
     "max-width": {
       "type": "String",
-      "desc": "The maximimum width of the Tooltip; Size in CSS units, including unit name",
+      "desc": "The maximum width of the Tooltip; Size in CSS units, including unit name",
       "examples": [
         "16px",
         "2rem"

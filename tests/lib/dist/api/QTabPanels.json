@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/tab-panels"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -62,7 +65,7 @@
   },
   "events": {
     "input": {
-      "desc": "Emitted when component's model changes (current panel name); Is also used by v-model",
+      "desc": "Emitted when the component changes the model; This event _isn't_ fired if the model is changed externally; Is also used by v-model",
       "params": {
         "value": {
           "type": [

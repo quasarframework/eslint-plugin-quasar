@@ -1,5 +1,8 @@
 {
   "type": "plugin",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/quasar-plugins/dialog"
+  },
   "injection": "$q.dialog",
   "methods": {
     "create": {
@@ -147,6 +150,17 @@
                   "desc": "See QBtn for available props"
                 }
               }
+            },
+            "focus": {
+              "type": "String",
+              "desc": "What button to focus, unless you also have 'prompt' or 'options'",
+              "values": [
+                "ok",
+                "cancel",
+                "none"
+              ],
+              "default": "ok",
+              "addedIn": "v1.5.0"
             },
             "stackButtons": {
               "type": "Boolean",

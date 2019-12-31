@@ -1,5 +1,8 @@
 {
   "type": "directive",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-directives/close-popup"
+  },
   "value": {
     "type": [
       "Boolean",

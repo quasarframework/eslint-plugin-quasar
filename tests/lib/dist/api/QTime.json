@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/time"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -90,7 +93,7 @@
     },
     "text-color": {
       "type": "String",
-      "desc": "Overrides text color (if needed); color name from the Quasar Color Palette",
+      "desc": "Overrides text color (if needed); Color name from the Quasar Color Palette",
       "examples": [
         "primary",
         "teal-10"
@@ -138,7 +141,7 @@
     },
     "options": {
       "type": "Function",
-      "desc": "Optionally configure what time is the user allowed to set; Overriden by 'hour-options', 'minute-options' and 'second-options' if those are set; For best performance, reference it from your scope and do not define it inline",
+      "desc": "Optionally configure what time is the user allowed to set; Overridden by 'hour-options', 'minute-options' and 'second-options' if those are set; For best performance, reference it from your scope and do not define it inline",
       "params": {
         "hr": {
           "type": "Number",
@@ -172,7 +175,7 @@
       "type": "Array",
       "desc": "Optionally configure what hours is the user allowed to set; Overrides 'options' prop if that is also set",
       "examples": [
-        ":hour-options=\"[3, 6, 9]\""
+        ":hour-options=\"[ 3, 6, 9 ]\""
       ],
       "category": "behavior"
     },

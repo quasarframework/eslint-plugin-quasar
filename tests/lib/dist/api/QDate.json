@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/date"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -90,7 +93,7 @@
     },
     "text-color": {
       "type": "String",
-      "desc": "Overrides text color (if needed); color name from the Quasar Color Palette",
+      "desc": "Overrides text color (if needed); Color name from the Quasar Color Palette",
       "examples": [
         "primary",
         "teal-10"
