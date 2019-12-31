@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/video"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -11,7 +14,7 @@
       "desc": "The source url to display in an iframe",
       "required": true,
       "examples": [
-        "https://www.youtube.com/embed/k3_tw44QsZQ"
+        "src=\"https://www.youtube.com/embed/k3_tw44QsZQ\""
       ],
       "category": "model"
     }

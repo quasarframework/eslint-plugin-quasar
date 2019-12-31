@@ -1,5 +1,8 @@
 {
   "type": "plugin",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/quasar-plugins/web-storage"
+  },
   "injection": "$q.sessionStorage",
   "methods": {
     "has": {

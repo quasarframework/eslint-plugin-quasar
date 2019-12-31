@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/stepper"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -24,7 +27,7 @@
     },
     "icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -77,7 +80,7 @@
     },
     "done-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -97,7 +100,7 @@
     },
     "active-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -117,7 +120,7 @@
     },
     "error-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",

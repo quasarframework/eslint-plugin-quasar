@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/splitter"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -30,6 +33,11 @@
       ],
       "category": "model",
       "addedIn": "v1.2.6"
+    },
+    "emit-immediately": {
+      "type": "Boolean",
+      "desc": "Emit model while user is panning on the separator",
+      "category": "model"
     },
     "horizontal": {
       "type": "Boolean",

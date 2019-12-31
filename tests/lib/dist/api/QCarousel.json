@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/carousel"
+  },
   "props": {
     "fullscreen": {
       "type": "Boolean",
@@ -114,7 +117,7 @@
     },
     "prev-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -125,7 +128,7 @@
     },
     "next-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -141,7 +144,7 @@
     },
     "navigation-icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [
         "map",
         "ion-add",
@@ -166,7 +169,7 @@
   },
   "events": {
     "input": {
-      "desc": "Emitted when component's model changes (current panel name); Is also used by v-model",
+      "desc": "Emitted when the component changes the model; This event _isn't_ fired if the model is changed externally; Is also used by v-model",
       "params": {
         "value": {
           "type": [

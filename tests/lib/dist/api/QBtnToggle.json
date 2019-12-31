@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/button-toggle"
+  },
   "behavior": {
     "$listeners": {
       "desc": "All native events are being propagated (you don't need the '.native' modifier)"
@@ -83,7 +86,7 @@
     },
     "text-color": {
       "type": "String",
-      "desc": "Overrides text color (if needed); color name from the Quasar Color Palette",
+      "desc": "Overrides text color (if needed); Color name from the Quasar Color Palette",
       "examples": [
         "primary",
         "teal-10"
@@ -102,7 +105,7 @@
     },
     "toggle-text-color": {
       "type": "String",
-      "desc": "Overrides text color (if needed); color name from the Quasar Color Palette",
+      "desc": "Overrides text color (if needed); Color name from the Quasar Color Palette",
       "examples": [
         "primary",
         "teal-10"
@@ -192,6 +195,12 @@
       "type": "Boolean",
       "desc": "When used on flexbox parent, button will stretch to parent's height",
       "category": "content"
+    },
+    "clearable": {
+      "type": "Boolean",
+      "desc": "Clears model on click of the already selected button",
+      "category": "model",
+      "addedIn": "v1.4.4"
     }
   },
   "events": {
@@ -204,6 +213,10 @@
           "required": true
         }
       }
+    },
+    "clear": {
+      "desc": "When using the 'clearable' property, this event is emitted when the already selected button is clicked",
+      "addedIn": "v1.4.4"
     }
   }
 }

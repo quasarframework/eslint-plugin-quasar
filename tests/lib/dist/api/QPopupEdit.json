@@ -1,5 +1,8 @@
 {
   "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/popup-edit"
+  },
   "props": {
     "value": {
       "desc": "Model of the component; Either use this property (along with a listener for 'input' event) OR use v-model directive",
@@ -177,7 +180,7 @@
     },
     "max-height": {
       "type": "String",
-      "desc": "The maximimum height of the menu; Size in CSS units, including unit name",
+      "desc": "The maximum height of the menu; Size in CSS units, including unit name",
       "examples": [
         "16px",
         "2rem"
@@ -186,7 +189,7 @@
     },
     "max-width": {
       "type": "String",
-      "desc": "The maximimum width of the menu; Size in CSS units, including unit name",
+      "desc": "The maximum width of the menu; Size in CSS units, including unit name",
       "examples": [
         "16px",
         "2rem"
@@ -225,7 +228,7 @@
           "params": {
             "value": {
               "type": "Any",
-              "desc": "Value to be emited",
+              "desc": "Value to be emitted",
               "examples": [
                 0,
                 "Changed text"

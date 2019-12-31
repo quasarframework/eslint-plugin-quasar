@@ -1,3 +1,6 @@
 {
-  "type": "component"
+  "type": "component",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/vue-components/uploader"
+  }
 }

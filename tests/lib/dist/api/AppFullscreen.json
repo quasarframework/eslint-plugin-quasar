@@ -1,5 +1,8 @@
 {
   "type": "plugin",
+  "meta": {
+    "docsUrl": "https://v1.quasar.dev/quasar-plugins/app-fullscreen"
+  },
   "injection": "$q.fullscreen",
   "props": {
     "isCapable": {
@@ -23,10 +26,24 @@
             "div.dashboard div.description"
           ]
         }
+      },
+      "returns": {
+        "type": "Promise<any>",
+        "desc": "A Promise with the outcome (true -> validation was a success, false -> invalid models detected)",
+        "examples": [
+          "request().then(response => { ... }).catch(err => { ... })"
+        ]
       }
     },
     "exit": {
-      "desc": "Request exiting out of Fullscreen mode"
+      "desc": "Request exiting out of Fullscreen mode",
+      "returns": {
+        "type": "Promise<any>",
+        "desc": "A Promise with the outcome (true -> validation was a success, false -> invalid models detected)",
+        "examples": [
+          "exit().then(response => { ... }).catch(err => { ... })"
+        ]
+      }
     },
     "toggle": {
       "desc": "Request toggling Fullscreen mode (with optional target if requesting going into Fullscreen only)",
@@ -38,6 +55,13 @@
             "div.dashboard div.description"
           ]
         }
+      },
+      "returns": {
+        "type": "Promise<any>",
+        "desc": "A Promise with the outcome (true -> validation was a success, false -> invalid models detected)",
+        "examples": [
+          "toggle().then(response => { ... }).catch(err => { ... })"
+        ]
       }
     }
   }
