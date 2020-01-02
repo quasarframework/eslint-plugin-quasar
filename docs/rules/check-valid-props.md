@@ -1,6 +1,6 @@
-# Checks correct usage of component properties (check-valid-props)
+# Checks correct usage of Quasar component properties (check-valid-props)
 
-Please describe the origin of the rule here.
+This rule uses the Quasar JSON API (@quasar/dist/api/*.json) to validate valid properties are being used per Quasar component.
 
 
 ## Rule Details
