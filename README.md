@@ -20,7 +20,6 @@ $ npm install --save-dev eslint-plugin-quasar
 
 ## Usage
 
-> Currently, in this phase of development, **eslint-plugin-quasar** is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar.
 
 The following changes need to be made to your `.eslintrc.js` configuration file.
 
