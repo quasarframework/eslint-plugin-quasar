@@ -1,7 +1,7 @@
 {
   "type": "component",
   "meta": {
-    "docsUrl": "https://v1.quasar.dev/vue-components/video"
+    "docsUrl": "https://v1.quasar.dev/vue-components/responsive"
   },
   "behavior": {
     "$listeners": {
@@ -20,17 +20,12 @@
         ":ratio=\"16/9\"",
         "ratio=\"1\""
       ],
-      "category": "style",
-      "addedIn": "v1.7.0"
-    },
-    "src": {
-      "type": "String",
-      "desc": "The source url to display in an iframe",
-      "required": true,
-      "examples": [
-        "src=\"https://www.youtube.com/embed/k3_tw44QsZQ\""
-      ],
-      "category": "model"
+      "category": "style"
+    }
+  },
+  "slots": {
+    "default": {
+      "desc": "Default slot in the devland unslotted content of the component"
     }
   }
 }

@@ -13,7 +13,7 @@
       "default": true,
       "examples": [
         false,
-        "{ center: true, color: 'teal', keyCodes: [] }"
+        "{ early: true, center: true, color: 'teal', keyCodes: [] }"
       ],
       "category": "style"
     },
@@ -55,6 +55,17 @@
       "category": "content"
     },
     "icon-right": {
+      "type": "String",
+      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "examples": [
+        "map",
+        "ion-add",
+        "img:https://cdn.quasar.dev/logo/svg/quasar-logo.svg",
+        "img:statics/path/to/some_image.png"
+      ],
+      "category": "content"
+    },
+    "icon-remove": {
       "type": "String",
       "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
       "examples": [

@@ -293,6 +293,15 @@
         ":content-class=\"{ 'my-special-class': <condition> }\""
       ],
       "category": "style"
+    },
+    "placeholder": {
+      "type": "String",
+      "desc": "Text to display as placeholder",
+      "examples": [
+        "Type your story here ..."
+      ],
+      "category": "content",
+      "addedIn": "v1.9.12"
     }
   },
   "events": {
