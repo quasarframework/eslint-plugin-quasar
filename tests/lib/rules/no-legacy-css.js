@@ -14,6 +14,7 @@ const legacyCss = css.filter(c => c.replacedWith !== void 0)
 let invalid = []
 invalid.push({
   code: '<template><div class="tertiary q-display-3 q-headline quote capitalize mat-only gutter-md"></div></template>',
+  output: '<template><div class="accent q-display-3 q-headline quote capitalize mat-only gutter-md"></div></template>',
   errors: [
     {
       message: `'tertiary' css class has been replaced with 'accent'`,
@@ -25,6 +26,7 @@ invalid.push({
 legacyCss.forEach(c => {
   invalid.push({
     code: `<template><div class="${c.name}"></div></template>`,
+    output: `<template><div class="${c.replacedWith.length > 0 ? c.replacedWith : ''}"></div></template>`,
     errors: [c.replacedWith.length > 0 ? {
       message: `'${c.name}' css class has been replaced with '${c.replacedWith}'`,
       type: 'VLiteral'

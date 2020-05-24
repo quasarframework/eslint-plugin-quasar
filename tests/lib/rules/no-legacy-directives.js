@@ -21,6 +21,7 @@ let invalid = []
 legacyDirectives.forEach(d => {
   invalid.push({
     code: `<template><div v-${d.tag}></div></template>`,
+    output: `<template><div ${d.replacedWith.length > 0 ? 'v-' + d.replacedWith : ''}></div></template>`,
     errors: [d.replacedWith.length > 0 ? {
       message: `'${d.tag}' directive has been replaced with '${d.replacedWith}'`,
       type: 'VDirectiveKey'
@@ -30,8 +31,6 @@ legacyDirectives.forEach(d => {
     }]
   })
 })
-
-console.log(invalid)
 
 const rule = require("../../../lib/rules/no-legacy-directives")
 const RuleTester = require("eslint").RuleTester
@@ -48,7 +47,6 @@ const ruleTester = new RuleTester({
 // Tests
 //------------------------------------------------------------------------------
 
-// var ruleTester = new RuleTester();
 ruleTester.run("no-legacy-directives", rule, {
 
   valid: valid,

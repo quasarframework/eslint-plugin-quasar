@@ -4,34 +4,49 @@
  */
 "use strict";
 
+const fs = require('fs')
+function readModuleFile(path) {
+  const filename = require.resolve(path)
+  return fs.readFileSync(filename, 'utf8')
+}
+
+const q_screen = readModuleFile('../test-files/$q-screen.txt')
+const q_actionSheet = readModuleFile('../test-files/$q-actionSheet.txt')
+
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-legacy-plugins"),
+let invalid = []
+invalid.push({
+  code: q_actionSheet,
+  errors: [
+    {
+      message: `'$q.actionSheet' plugin has been replaced with '$q.bottomSheet'`,
+      type: 'Identifier'
+    }
+  ]
+})
 
-    RuleTester = require("eslint").RuleTester;
+const rule = require("../../../lib/rules/no-legacy-plugins")
+const RuleTester = require("eslint").RuleTester
+const ruleTester = new RuleTester({
+  parser: require.resolve('vue-eslint-parser'),
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module'
+  }
+})
 
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
-// ruleTester.run("no-legacy-plugins", rule, {
+ruleTester.run("no-legacy-plugins", rule, {
+  valid: [
+    q_screen
+  ],
 
-//     valid: [
-
-//         // give me some code that won't trigger a warning
-//     ],
-
-//     invalid: [
-//         {
-//             code: "ActionSheet",
-//             errors: [{
-//                 message: "Fill me in.",
-//                 type: "Me too"
-//             }]
-//         }
-//     ]
-// });
+  invalid
+})
