@@ -33,6 +33,17 @@
       ],
       "category": "content"
     },
+    "children-key": {
+      "type": "String",
+      "desc": "The property name of each node object that holds the list of children of the node",
+      "default": "children",
+      "examples": [
+        "roles",
+        "relatives"
+      ],
+      "category": "content",
+      "addedIn": "v1.11.3"
+    },
     "no-connectors": {
       "type": "Boolean",
       "desc": "Do not display the connector lines between nodes",
@@ -423,6 +434,14 @@
           ]
         }
       }
+    },
+    "after-show": {
+      "desc": "Emitted when component show animation is finished",
+      "addedIn": "v1.9.0"
+    },
+    "after-hide": {
+      "desc": "Emitted when component hide animation is finished",
+      "addedIn": "v1.9.0"
     }
   },
   "methods": {

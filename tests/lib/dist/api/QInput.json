@@ -9,6 +9,16 @@
     }
   },
   "props": {
+    "name": {
+      "type": "String",
+      "desc": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
+      "examples": [
+        "car_id",
+        "car_id"
+      ],
+      "category": "behavior",
+      "addedIn": "v1.9.0"
+    },
     "mask": {
       "type": "String",
       "desc": "Custom mask or one of the predefined mask names",
@@ -73,9 +83,23 @@
       ],
       "category": "behavior"
     },
-    "lazy-rules": {
+    "reactive-rules": {
       "type": "Boolean",
-      "desc": "Check validation status against the 'rules' only after field loses focus for first time",
+      "desc": "By default a change in the rules does not trigger a new validation until the model changes; If set to true then a change in the rules will trigger a validation; Has a performance penalty, so use it only when you really need it",
+      "category": "behavior",
+      "addedIn": "v1.11.0"
+    },
+    "lazy-rules": {
+      "type": [
+        "Boolean",
+        "String"
+      ],
+      "desc": "If set to boolean true then it checks validation status against the 'rules' only after field loses focus for first time; If set to 'ondemand' then it will trigger only when component's validate() method is manually called or when the wrapper QForm submits itself",
+      "values": [
+        false,
+        true,
+        "ondemand"
+      ],
       "category": "behavior"
     },
     "label": {
@@ -119,6 +143,16 @@
         "@gmail.com"
       ],
       "category": "content"
+    },
+    "label-color": {
+      "type": "String",
+      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
+      "examples": [
+        "primary",
+        "teal-10"
+      ],
+      "category": "style",
+      "addedIn": "v1.7.0"
     },
     "color": {
       "type": "String",
@@ -195,7 +229,7 @@
     },
     "hide-bottom-space": {
       "type": "Boolean",
-      "desc": "Does not reserves space for hint/error/counter anymore when these are not used; as a result, it also disables the animation for those",
+      "desc": "Do not reserve space for hint/error/counter anymore when these are not used; As a result, it also disables the animation for those; It also allows the hint/error area to stretch vertically based on its content",
       "category": "style"
     },
     "counter": {
@@ -240,9 +274,9 @@
     },
     "for": {
       "type": "String",
-      "desc": "DOM element id to be used as 'for' attribute of the label and as 'id' for the focus target",
+      "desc": "Used to specify the 'id' of the control and also the 'for' attribute of the label that wraps it; If no 'name' prop is specified, then it is used for this attribute as well",
       "examples": [
-        "for=\"myFieldsId\""
+        "myFieldsId"
       ],
       "category": "behavior",
       "addedIn": "v1.4.2"
@@ -258,6 +292,15 @@
         "v-model=\"myText\""
       ],
       "category": "model"
+    },
+    "shadow-text": {
+      "type": "String",
+      "desc": "Text to be displayed as shadow at the end of the text in the control; Does NOT applies to type=file",
+      "examples": [
+        "rest of the fill value"
+      ],
+      "category": "content",
+      "addedIn": "v1.10.0"
     },
     "type": {
       "type": "String",

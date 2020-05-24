@@ -67,7 +67,7 @@
       "default": true,
       "examples": [
         false,
-        "{ center: true, color: 'teal', keyCodes: [] }"
+        "{ early: true, center: true, color: 'teal', keyCodes: [] }"
       ],
       "category": "style"
     },
@@ -104,6 +104,15 @@
         "alert=\"purple\""
       ],
       "category": "content"
+    },
+    "alert-icon": {
+      "type": "String",
+      "desc": "Adds a floating icon to the tab, notifying the user there are some updates; It's displayed only if 'alert' is set; Can use the color specified by 'alert' prop",
+      "examples": [
+        "alert-icon=\"alarm_on\""
+      ],
+      "category": "content",
+      "addedIn": "v1.9.14"
     },
     "name": {
       "type": [

@@ -2,7 +2,9 @@
 
 > **~~Currently, in this phase of development, eslint-plugin-quasar is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar ONLY.~~**
 
-> **Starting with 1.0.0-alpha.10, eslint-plugin-quasar now supports v1+ with the `quasar/check-valid-props` rule.** More information below...
+> **Starting with 1.0.0-alpha.10, eslint-plugin-quasar now supports v1+ with the `quasar/no-invalid-props` rule.** More information below...
+
+> ** The rule `quasar/check-valid-props` has been deprecated. Use the rule `quasar/no-invalid-props` instead.
 
 Help us test this plugin. If you see any issues, please file an [issue](https://github.com/quasarframework/eslint-plugin-quasar/issues).
 
@@ -14,13 +16,14 @@ Prerequisites: Node.js (>=8.10), npm (>=5.6.0), yarn (>=1.6.0)
 
 ```bash
 $ yarn add --dev eslint-plugin-quasar
+
 # or
+
 $ npm install --save-dev eslint-plugin-quasar
 ```
 
 ## Usage
 
-> Currently, in this phase of development, **eslint-plugin-quasar** is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar.
 
 The following changes need to be made to your `.eslintrc.js` configuration file.
 
@@ -48,10 +51,11 @@ Modification to  the `rules` section:
 ```js
 {
   "rules": [
-    'quasar/no-legacy-components': 0,
-    'quasar/no-legacy-css': 0,
-    'quasar/no-legacy-directives': 0,
-    'quasar/no-legacy-properties': 0
+    'quasar/no-legacy-components': "error",
+    'quasar/no-legacy-css': "error",
+    'quasar/no-legacy-directives': "error",
+    'quasar/no-legacy-properties': "error",
+    'quasar/no-legacy-plugins': "error"
   ]
 }
 ```
@@ -71,8 +75,8 @@ Modification to  the `rules` section:
 ```js
 {
   "rules": [
-    'quasar/check-valid-props': 0,
-    'quasar/no-invalid-qfield-usage': 0
+    'quasar/no-invalid-props': "error",
+    'quasar/no-invalid-qfield-usage': "error"
   ]
 }
 ```
@@ -144,16 +148,229 @@ Also, it should be noted that **eslint-plugin-quasar** currently has no support 
 If you are interested in the output of the testing, you can view the results below (for v.17 and v1.+):
 
 ```
-$ mocha tests --recursive
-[ { code: '<template><div v-back-to-top></div></template>',
-    errors: [ [Object] ] },
-  { code: '<template><div v-close-overlay></div></template>',
-    errors: [ [Object] ] } ]
+$ yarn mocha tests --recursive
+yarn run v1.22.4
+$ .../eslint-plugin-quasar/node_modules/.bin/mocha tests --recursive
 
 
   check-valid-props
     valid
-      ✓ <template><q-btn flat color="primary" :label="Flat" @click="onClick" /></template> (160ms)
+      ✓ <template>
+  <div class="q-pa-md q-gutter-md" style="font-size: 36px">
+    <q-icon name="settings_remote" class="text-brown cursor-pointer">
+      <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
+        <q-banner class="bg-brown text-white">
+          <template v-slot:avatar>
+            <q-icon name="signal_wifi_off" />
+          </template>
+          You have lost connection to the internet. This app is offline.
+        </q-banner>
+      </q-popup-proxy>
+    </q-icon>
+
+    <q-icon name="perm_data_setting" class="text-purple cursor-pointer">
+      <q-popup-proxy :offset="[10, 10]">
+        <q-banner class="bg-purple text-white">
+          <template v-slot:avatar>
+            <q-icon name="signal_wifi_off" />
+          </template>
+          You have lost connection to the internet. This app is offline.
+        </q-banner>
+      </q-popup-proxy>
+    </q-icon>
+  </div>
+</template>
+ (107ms)
+      ✓ <template>
+  <div class="q-pa-md">
+    <q-input filled v-model="input" mask="date" :rules="['date']">
+      <template v-slot:append>
+        <q-icon name="event" class="cursor-pointer">
+          <q-popup-proxy :breakpoint="600">
+            <q-date v-model="input" />
+          </q-popup-proxy>
+        </q-icon>
+      </template>
+    </q-input>
+  </div>
+</template>
+
+      ✓ <template>
+  <div class="q-pa-md">
+    <q-btn push color="purple" label="Handles right-click">
+      <q-popup-proxy context-menu>
+        <q-banner>
+          <template v-slot:avatar>
+            <q-icon name="signal_wifi_off" color="primary" />
+          </template>
+          You have lost connection to the internet. This app is offline.
+        </q-banner>
+      </q-popup-proxy>
+    </q-btn>
+  </div>
+</template>
+
+
+      ✓ <template><q-btn flat color="primary" :label="Flat" @click="onClick" /></template>
+      ✓ <template><q-btn class="glossy" round color="deep-orange" icon="local_activity" /></template>
+      ✓ <template><q-btn dense color="primary" :size="size" :label="`Size xl`" /></template>
+      ✓ <template><q-btn type="submit" :loading="submitting" label="Save" class="q-mt-md" color="teal"><template v-slot:loading><q-spinner-facebook /></template></q-btn></template>
+      ✓ <template><q-popup-proxy transition-show="scale"></q-popup-proxy></template>
+      ✓ <template>
+  <div class="q-pa-md" style="max-width: 350px">
+    <q-list ref="list">
+      <q-expansion-item popup default-opened icon="mail" label="Inbox" caption="5 unread emails">
+        <q-separator />
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-expansion-item popup icon="send" label="Outbox" caption="Empty">
+        <q-separator />
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-expansion-item popup icon="drafts" label="Draft" caption="Draft a new email">
+        <q-separator />
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+    </q-list>
+  </div>
+</template>
+      ✓ <template>
+  <div class="q-pa-md row items-start q-gutter-md">
+    <q-card class="my-card">
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card
+      class="my-card text-white" style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
+    >
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
+
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card dark bordered class="bg-grey-9 my-card">
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
+
+      <q-separator dark inset />
+
+      <q-card-section>
+        {{ lorem }}
+      </q-card-section>
+    </q-card>
+
+    <q-card flat bordered class="my-card">
+      <q-card-section>
+        <div class="text-h6">Our Changing Planet</div>
+      </q-card-section>
+
+      <q-card-section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </q-card-section>
+
+      <q-separator inset />
+
+      <q-card-section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </q-card-section>
+    </q-card>
+  </div>
+</template>
+
+    invalid
+      ✓ <template><q-btn flat color="primary" label="Flat" boo-boo /></template>
+      ✓ <template><q-btn class="glossy" round color="deep-orange" icon="local_activity" bad-prop="nothing" /></template>
+      ✓ <template><q-btn dense color="primary" :size="size" :label="`Size xl`" :invalid-prop="invalid" /></template>
+      ✓ <template><q-btn type="submit" :loading="submitting" label="Save" class="q-mt-md" color="teal" :wrong="wrong"><template v-slot:loading><q-spinner-facebook /></template></q-btn></template>
+
+  no-invalid-props
+    valid
+      ✓ <template>
+  <div class="q-pa-md q-gutter-md" style="font-size: 36px">
+    <q-icon name="settings_remote" class="text-brown cursor-pointer">
+      <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
+        <q-banner class="bg-brown text-white">
+          <template v-slot:avatar>
+            <q-icon name="signal_wifi_off" />
+          </template>
+          You have lost connection to the internet. This app is offline.
+        </q-banner>
+      </q-popup-proxy>
+    </q-icon>
+
+    <q-icon name="perm_data_setting" class="text-purple cursor-pointer">
+      <q-popup-proxy :offset="[10, 10]">
+        <q-banner class="bg-purple text-white">
+          <template v-slot:avatar>
+            <q-icon name="signal_wifi_off" />
+          </template>
+          You have lost connection to the internet. This app is offline.
+        </q-banner>
+      </q-popup-proxy>
+    </q-icon>
+  </div>
+</template>
+
+      ✓ <template>
+  <div class="q-pa-md">
+    <q-input filled v-model="input" mask="date" :rules="['date']">
+      <template v-slot:append>
+        <q-icon name="event" class="cursor-pointer">
+          <q-popup-proxy :breakpoint="600">
+            <q-date v-model="input" />
+          </q-popup-proxy>
+        </q-icon>
+      </template>
+    </q-input>
+  </div>
+</template>
+
+      ✓ <template>
+  <div class="q-pa-md">
+    <q-btn push color="purple" label="Handles right-click">
+      <q-popup-proxy context-menu>
+        <q-banner>
+          <template v-slot:avatar>
+            <q-icon name="signal_wifi_off" color="primary" />
+          </template>
+          You have lost connection to the internet. This app is offline.
+        </q-banner>
+      </q-popup-proxy>
+    </q-btn>
+  </div>
+</template>
+
+
+      ✓ <template><q-btn flat color="primary" :label="Flat" @click="onClick" /></template>
       ✓ <template><q-btn class="glossy" round color="deep-orange" icon="local_activity" /></template>
       ✓ <template><q-btn dense color="primary" :size="size" :label="`Size xl`" /></template>
       ✓ <template><q-btn type="submit" :loading="submitting" label="Save" class="q-mt-md" color="teal"><template v-slot:loading><q-spinner-facebook /></template></q-btn></template>
@@ -292,14 +509,16 @@ $ mocha tests --recursive
       ✓ <template><q-expansion-item></q-expansion-item></template>
       ✓ <template><q-fab></q-fab></template>
       ✓ <template><q-field></q-field></template>
+      ✓ <template><q-file></q-file></template>
       ✓ <template><q-footer></q-footer></template>
       ✓ <template><q-form></q-form></template>
       ✓ <template><q-header></q-header></template>
       ✓ <template><q-icon></q-icon></template>
       ✓ <template><q-img></q-img></template>
-      ✓ <template><q-infinit-scroll></q-infinit-scroll></template>
+      ✓ <template><q-infinite-scroll></q-infinite-scroll></template>
       ✓ <template><q-inner-loading></q-inner-loading></template>
       ✓ <template><q-input></q-input></template>
+      ✓ <template><q-intersection></q-intersection></template>
       ✓ <template><q-item></q-item></template>
       ✓ <template><q-item-label></q-item-label></template>
       ✓ <template><q-item-section></q-item-section></template>
@@ -324,15 +543,37 @@ $ mocha tests --recursive
       ✓ <template><q-range></q-range></template>
       ✓ <template><q-rating></q-rating></template>
       ✓ <template><q-resize-observer></q-resize-observer></template>
+      ✓ <template><q-responsive></q-responsive></template>
       ✓ <template><q-route-tab></q-route-tab></template>
       ✓ <template><q-scroll-area></q-scroll-area></template>
       ✓ <template><q-scroll-observer></q-scroll-observer></template>
       ✓ <template><q-select></q-select></template>
       ✓ <template><q-separator></q-separator></template>
+      ✓ <template><q-skeleton></q-skeleton></template>
       ✓ <template><q-slide-item></q-slide-item></template>
       ✓ <template><q-slider></q-slider></template>
       ✓ <template><q-slide-transition></q-slide-transition></template>
       ✓ <template><q-space></q-space></template>
+      ✓ <template><q-spinner></q-spinner></template>
+      ✓ <template><q-spinner-audio></q-spinner-audio></template>
+      ✓ <template><q-spinner-ball></q-spinner-ball></template>
+      ✓ <template><q-spinner-bars></q-spinner-bars></template>
+      ✓ <template><q-spinner-comment></q-spinner-comment></template>
+      ✓ <template><q-spinner-cube></q-spinner-cube></template>
+      ✓ <template><q-spinner-dots></q-spinner-dots></template>
+      ✓ <template><q-spinner-facebook></q-spinner-facebook></template>
+      ✓ <template><q-spinner-gears></q-spinner-gears></template>
+      ✓ <template><q-spinner-grid></q-spinner-grid></template>
+      ✓ <template><q-spinner-hearts></q-spinner-hearts></template>
+      ✓ <template><q-spinner-hourglass></q-spinner-hourglass></template>
+      ✓ <template><q-spinner-infinity></q-spinner-infinity></template>
+      ✓ <template><q-spinner-ios></q-spinner-ios></template>
+      ✓ <template><q-spinner-oval></q-spinner-oval></template>
+      ✓ <template><q-spinner-pie></q-spinner-pie></template>
+      ✓ <template><q-spinner-puff></q-spinner-puff></template>
+      ✓ <template><q-spinner-radio></q-spinner-radio></template>
+      ✓ <template><q-spinner-rings></q-spinner-rings></template>
+      ✓ <template><q-spinner-tail></q-spinner-tail></template>
       ✓ <template><q-spitter></q-spitter></template>
       ✓ <template><q-step></q-step></template>
       ✓ <template><q-stepper></q-stepper></template>
@@ -355,6 +596,7 @@ $ mocha tests --recursive
       ✓ <template><q-tree></q-tree></template>
       ✓ <template><q-uploader></q-uploader></template>
       ✓ <template><q-uploader-add-trigger></q-uploader-add-trigger></template>
+      ✓ <template><q-uploader-base></q-uploader-base></template>
       ✓ <template><q-video></q-video></template>
       ✓ <template><q-virtual-scroll></q-virtual-scroll></template>
     invalid
@@ -432,6 +674,8 @@ $ mocha tests --recursive
     valid
       ✓ <template><div v-close-popup></div></template>
       ✓ <template><div v-go-back></div></template>
+      ✓ <template><div v-intersection></div></template>
+      ✓ <template><div v-mutation></div></template>
       ✓ <template><div v-ripple></div></template>
       ✓ <template><div v-scroll></div></template>
       ✓ <template><div v-scroll-fire></div></template>
@@ -442,6 +686,54 @@ $ mocha tests --recursive
     invalid
       ✓ <template><div v-back-to-top></div></template>
       ✓ <template><div v-close-overlay></div></template>
+
+  no-legacy-plugins
+    valid
+      ✓ <template>
+  <q-list :dense="$q.screen.lt.md">
+    <q-item>
+      <q-item-section>John Doe</q-item-section>
+    </q-item>
+
+    <q-item>
+      <q-item-section>Jane Doe</q-item-section>
+    </q-item>
+  </q-list>
+</template>
+
+export default {
+  computed: {
+    buttonColor () {
+      return this.$q.screen.lt.md
+        ? 'primary'
+        : 'secondary'
+    }
+  }
+}
+
+    invalid
+      ✓ <template>
+  <q-list :dense="$q.actionSheet">
+    <q-item>
+      <q-item-section>John Doe</q-item-section>
+    </q-item>
+
+    <q-item>
+      <q-item-section>Jane Doe</q-item-section>
+    </q-item>
+  </q-list>
+</template>
+
+export default {
+  computed: {
+    buttonColor () {
+      return this.$q.actionSheet
+        ? 'primary'
+        : 'secondary'
+    }
+  }
+}
+
 
   no-legacy-properties
     valid
@@ -459,7 +751,7 @@ $ mocha tests --recursive
       ✓ <template><q-chip avatar closable detail floating pointing small tag></q-chip></template>
       ✓ <template><q-dialog cancel color ok message options prevent-close prompt stack-buttons title></q-dialog></template>
       ✓ <template><q-drawer no-hide-on-route-change></q-drawer></template>
-      ✓ <template><q-infinit-scroll handler inline></q-infinit-scroll></template>
+      ✓ <template><q-infinite-scroll handler inline></q-infinite-scroll></template>
       ✓ <template><q-inner-loading visible></q-inner-loading></template>
       ✓ <template><q-input after align before clear-value decimals float-label hide-underline initial-show-password inverted inverted-light lower-case max-height no-parent-field no-pass-toggle numeric-keyboard-toggle step upper-case warning></q-input></template>
       ✓ <template><q-item event highlight inset-separator link multiline separator sparse></q-item></template>
@@ -488,7 +780,7 @@ $ mocha tests --recursive
       ✓ <template><q-uploader additional-fields after align auto-expand before clear-value clearable error expand-style extensions float-label hide-underline hide-upload-button hide-upload-progress inverted inverted-light name no-content-type no-parent-field placeholder prefix stack-label suffix upload-factory url-factory warning></q-uploader></template>
 
 
-  224 passing (654ms)
+  270 passing (678ms)
 
-Done in 1.54s.
+Done in 1.07s.
 ```

@@ -1,0 +1,21 @@
+<template>
+  <q-list :dense="$q.screen.lt.md">
+    <q-item>
+      <q-item-section>John Doe</q-item-section>
+    </q-item>
+
+    <q-item>
+      <q-item-section>Jane Doe</q-item-section>
+    </q-item>
+  </q-list>
+</template>
+
+export default {
+  computed: {
+    buttonColor () {
+      return this.$q.screen.lt.md
+        ? 'primary'
+        : 'secondary'
+    }
+  }
+}
