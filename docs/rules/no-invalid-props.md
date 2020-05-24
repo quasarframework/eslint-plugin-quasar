@@ -1,6 +1,4 @@
-# Checks correct usage of Quasar component properties (check-valid-props)
-
-**check-valid-props** is *deprecated**, use **no-invalid-props** instead.
+# Checks correct usage of Quasar component properties (no-invalid-props)
 
 This rule uses the Quasar JSON API (@quasar/dist/api/*.json) to validate valid properties are being used per Quasar component.
 

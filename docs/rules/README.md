@@ -34,5 +34,5 @@ Enforce all the rules in this category with:
 
 | Rule ID | Description |    |
 |:--------|:------------|:---|
-| check-valid-props | Checks correct usage of component properties |  |
+| no-invalid-props | Checks correct usage of component properties |  |
 | no-invalid-qfield-usage | QField should not be used to wrap QInput or QSelect |  |
