@@ -1,4 +1,4 @@
-# eslint-plugin-quasar [WIP]
+# eslint-plugin-quasar
 
 > **~~Currently, in this phase of development, eslint-plugin-quasar is concentrating on helping to convert legacy Quasar v0.17+ to v1 Quasar ONLY.~~**
 
